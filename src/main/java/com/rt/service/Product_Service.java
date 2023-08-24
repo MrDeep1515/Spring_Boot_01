@@ -1,5 +1,7 @@
 package com.rt.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,18 @@ public class Product_Service {
 		
 	}
 	
-	
+	public Optional<Product_Entity> findProductById(int id) {
+		
+		  Optional<Product_Entity> pe = dao.findById(id);
+			
+			return pe;	
+		}
+
+		public Product_Entity deleteProductById(int id) {
+			
+			dao.deleteById(id);
+			
+			return null;
+		}
 
 }
