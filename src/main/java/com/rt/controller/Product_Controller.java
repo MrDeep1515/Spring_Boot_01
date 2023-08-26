@@ -39,9 +39,19 @@ public class Product_Controller {
 	/*-----------------------------------------------------------------------------------------------------*/
 
 	@GetMapping("/find/product/{product}")
-	public List<Product_Entity> findByProduct(@PathVariable String product ) {
+	public List<Product_Entity> findByProduct(@PathVariable String product) {
 
 		List<Product_Entity> pe = service.findByProduct(product);
+
+		return pe;
+	}
+
+	/*-----------------------------------------------------------------------------------------------------*/
+
+	@GetMapping("/find/price/{price}")
+	public List<Product_Entity> findByPrice(@PathVariable int price) {
+
+		List<Product_Entity> pe = service.findByPrice(price);
 
 		return pe;
 	}

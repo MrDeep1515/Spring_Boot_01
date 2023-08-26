@@ -20,6 +20,7 @@ public class Product_Service {
 		dao.save(pe);
 
 	}
+	/*-----------------------------------------------------------------------------------------------------*/
 
 	public Optional<Product_Entity> findProductById(int id) {
 
@@ -27,13 +28,23 @@ public class Product_Service {
 
 		return pe;
 	}
+	/*-----------------------------------------------------------------------------------------------------*/
 
 	public List<Product_Entity> findByProduct(String product) {
-		
+
 		List<Product_Entity> pe = dao.findByProduct(product);
 
 		return pe;
 	}
+	/*-----------------------------------------------------------------------------------------------------*/
+
+	public List<Product_Entity> findByPrice(int price) {
+		
+		List<Product_Entity> pe = dao.findByPrice(price);
+		
+		return pe;
+	}
+	/*-----------------------------------------------------------------------------------------------------*/
 
 	public Product_Entity deleteProductById(int id) {
 
@@ -41,12 +52,12 @@ public class Product_Service {
 
 		return null;
 	}
+	/*-----------------------------------------------------------------------------------------------------*/
 
 	public List<Product_Entity> findAllProduct() {
 		List<Product_Entity> pe = dao.findAll();
 		return pe;
 	}
-
-	
+	/*-----------------------------------------------------------------------------------------------------*/
 
 }
