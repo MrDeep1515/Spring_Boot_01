@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.assertj.core.internal.bytebuddy.implementation.auxiliary.AuxiliaryType.SignatureRelevant;
+
 @Entity
 @Table(name = "add_product")
 public class Product_Entity {
@@ -14,6 +16,7 @@ public class Product_Entity {
 	@GeneratedValue
 	@Column(name = "id")
 	private int id;
+	
 	
 	@Column(name = "product")
 	private String product;
