@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,11 @@ public class Product_Controller {
 
 	@Autowired
 	Product_Service service;
+	
+	@Value("${message}")
+	private String msg;
+	
+	/*-----------------------------------------------------------------------------------------------------*/
 
 	@PostMapping("/add")
 	public String hello(@RequestBody Product_Entity pe) {
@@ -31,9 +37,9 @@ public class Product_Controller {
 	/*-----------------------------------------------------------------------------------------------------*/
 	@GetMapping("/find/id/{id}")
 	public Optional<Product_Entity> findProductById(@PathVariable int id) {
-
+		
 		Optional<Product_Entity> pe = service.findProductById(id);
-
+		System.out.println(msg);
 		return pe;
 	}
 	/*-----------------------------------------------------------------------------------------------------*/
