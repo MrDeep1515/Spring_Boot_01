@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rt.entity.Product_Entity;
 import com.rt.service.Product_Service;
 
+@CrossOrigin("*")
 @RestController
 public class Product_Controller {
 
@@ -72,7 +74,8 @@ public class Product_Controller {
 		return pe;
 	}
 	/*-----------------------------------------------------------------------------------------------------*/
-
+	
+	
 	@GetMapping("/findall")
 	public List<Product_Entity> findAllProduct() {
 
