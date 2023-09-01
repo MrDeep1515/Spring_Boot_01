@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.assertj.core.internal.bytebuddy.implementation.auxiliary.AuxiliaryType.SignatureRelevant;
 
@@ -17,7 +18,7 @@ public class Product_Entity {
 	@Column(name = "id")
 	private int id;
 	
-	
+	@Size
 	@Column(name = "product")
 	private String product;
 	
